@@ -4,7 +4,7 @@
 
 脚本在auto_course_grabber.js里，另外两个文件夹是选课系统代码源文件抓包，是我分析用的；
 大家的选课系统好像都是差不多一个外包公司做的，这个脚本还是有通用性的。
-操作视频演示在 https://www.bilibili.com/video/BV15q3xz5EzY。
+操作视频演示在 https://www.bilibili.com/video/BV15q3xz5EzY
 
 ## 功能特性
 
