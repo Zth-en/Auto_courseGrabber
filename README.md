@@ -64,6 +64,7 @@ const RETRY_DELAY = 3000;           // 重试延迟(毫秒)
 
 - 作者: ceilf (中欧 信息工程)
 - GitHub: https://github.com/ceilf6
+- blog: https://blog.csdn.net/2301_78856868
 - 邮箱: 3506456886@qq.com
 
 ## 更新日志
